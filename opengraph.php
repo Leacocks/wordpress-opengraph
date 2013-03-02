@@ -5,13 +5,10 @@
  Description: Adds Open Graph metadata to your pages
  Author: Will Norris, modified by Parker Moore
  Author URI: http://willnorris.com/
- Version: 1.5.2
+ Version: 1.5.3
  License: Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
  Text Domain: opengraph
  */
-
-// Require Woo Framwork
-//require_once('../themes/leacocksdailyedition/functions/admin-init.php');
 
 // If you have the opengraph plugin running alongside jetpack, we assume you'd
 // rather use our opengraph support, so disable jetpack's opengraph functionality.
@@ -113,17 +110,17 @@ function opengraph_default_title( $title ) {
   if ( empty($title) ) {
     if ( is_singular() ) {
       $post = get_queried_object();
-      if(function_exists('woo_title')){
-        $title = woo_title(false);
-      }else{
-        if ( isset($post->post_title) ) {
-          $title = $post->post_title;
-        }
+      if ( isset($post->post_title) ) {
+        $title = $post->post_title;
       }
     } else if ( is_author() ) {
       $author = get_queried_object();
       $title = $author->display_name;
     }
+    if ( opengraph_default_sitename() ) {
+       $title = $title . " &raquo; " . opengraph_default_sitename();
+    }
+    $title = $title . " &raquo; Leacock&#039;s";
   }
   return $title;
 }
