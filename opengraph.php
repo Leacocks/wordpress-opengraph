@@ -5,7 +5,7 @@
  Description: Adds Open Graph metadata to your pages
  Author: Will Norris
  Author URI: http://willnorris.com/
- Version: 1.5.1
+ Version: 1.6-alpha
  License: Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)
  Text Domain: opengraph
  */
@@ -111,8 +111,12 @@ function opengraph_default_title( $title ) {
   if ( empty($title) ) {
     if ( is_singular() ) {
       $post = get_queried_object();
-      if ( isset($post->post_title) ) {
-        $title = $post->post_title;
+      if(function_exists('woo_title')){
+          $title = woo_title(false);
+      }else{
+          if ( isset($post->post_title) ) {
+            $title = $post->post_title;
+          }
       }
     } else if ( is_author() ) {
       $author = get_queried_object();
