@@ -118,8 +118,9 @@ function opengraph_default_title( $title ) {
       $title = $author->display_name;
     }
   }
-  if ( !empty(opengraph_default_site_name("")) ) {
-     $title = $title . " &raquo; " . opengraph_default_site_name("");
+  $site_name = opengraph_default_site_name("");
+  if ( strlen($site_name) > 0 ) {
+     $title = $title . " &raquo; " . $site_name;
   }
   $title = $title . " &raquo; Leacock&#039;s";
 
