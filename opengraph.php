@@ -11,7 +11,7 @@
  */
 
 // Require Woo Framwork
-require_once(TEMPLATEPATH . '/functions/' . 'admin-init.php');
+require_once('../themes/leacocksdailyedition/functions/admin-init.php');
 
 // If you have the opengraph plugin running alongside jetpack, we assume you'd
 // rather use our opengraph support, so disable jetpack's opengraph functionality.
