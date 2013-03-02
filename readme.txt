@@ -80,6 +80,9 @@ using the `opengraph_prefixes` filter.
 Project maintined on github at
 [willnorris/wordpress-opengraph](https://github.com/willnorris/wordpress-opengraph).
 
+= version 1.5.2 (Mar 2, 2013) =
+ - using woo_title to get title instead of just the post title
+
 = version 1.5.1 (Nov 13, 2012) =
  - fix duplicate opengraph markup when used with jetpack plugin (for real)
 
