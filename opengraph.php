@@ -117,11 +117,12 @@ function opengraph_default_title( $title ) {
       $author = get_queried_object();
       $title = $author->display_name;
     }
-    if ( opengraph_default_sitename("") ) {
-       $title = $title . " &raquo; " . opengraph_default_sitename("");
-    }
-    $title = $title . " &raquo; Leacock&#039;s";
   }
+  if ( opengraph_default_sitename("") ) {
+     $title = $title . " &raquo; " . opengraph_default_sitename("");
+  }
+  $title = $title . " &raquo; Leacock&#039;s";
+
   return $title;
 }
 
